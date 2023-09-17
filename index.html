@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Web By Sami</title>
+    
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+</head>
+<body>
+    
+    <header>
+        <a href="#" class="brand">Sami</a>
+        <div class="menu-btn"></div>
+        <div class="navigation">
+            <div class="navigation-items">
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Explore</a>
+                <a href="#">Gallery</a>
+                <a href="#">Contact</a>
+                
+            </div>
+        </div>
+    </header>
+
+    <section class="home">
+        <video class="video-slide active" src="/1.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="/2.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="/3.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="/4" autoplay muted loop></video>
+        <video class="video-slide" src="/5.mp4" autoplay muted loop></video>
+        <div class="content active">
+            <h1>WonderFul.<br><span>Island</span></h1>
+            <p>Islands are landmasses surrounded by water, coming in various sizes and formed by geological processes. 
+            They host unique ecosystems, have historical significance as hubs of civilization, 
+            and continue to be captivating places of natural beauty and cultural importance.</p>
+            <a href="#">Read More</a>
+
+        </div>
+
+        <!-- <div class="content">
+            <h1>Cultural.<br><span>Exploration</span></h1>
+            <p>Immerse yourself in Japanese culture by visiting cities like Kyoto, Tokyo, and Osaka. Experience traditional tea ceremonies, visit historic temples, and enjoy the beauty of cherry blossoms in spring.</p>
+            <a href="#">Read More</a>
+
+        </div>
+
+        <div class="content">
+            <h1>Relaxation.<br><span>Deep Breath</span></h1>
+            <p> Unwind in overwater bungalows, snorkel in crystal-clear waters, and enjoy the tranquility of the Maldives. It's a perfect destination for honeymooners and anyone seeking a peaceful beach getaway.</p>
+            <a href="#">Read More</a>
+
+        </div>
+
+        <div class="content">
+            <h1>Wildlife.<br><span>Safari</span></h1>
+            <p>Embark on a safari adventure in countries like Kenya, Tanzania, or South Africa to witness the incredible wildlife, including the Big Five (lion, elephant, buffalo, leopard, and rhinoceros).</p>
+            <a href="#">Read More</a>
+
+        <div class="content">
+            <h1>Road.<br><span>Trip</span></h1>
+            <p> Drive the scenic Pacific Coast Highway from San Francisco to Los Angeles, stopping at beautiful coastal towns, national parks like Yosemite and Joshua Tree, and enjoying the vibrant city life along the way.</p>
+            <a href="#">Read More</a>
+
+        </div> -->
+
+        <div class="media-icons">
+            <a href="#"><i class='bx bxl-facebook'></i></a>
+            <a href="#"><i class='bx bxl-instagram-alt' ></i></a>
+            <a href="#"><i class='bx bxl-twitter' ></i></a>
+        </div>
+        <div class="slider-navigation">
+            <div class="nav-btn active"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+        </div>
+    </section>
+
+    <script type="text/javascript">
+        //javascript for respponsive navigation menu
+        const menuBtn = document.querySelector(".menu-btn");
+        const navigation = document.querySelector(".navigation");
+
+        menuBtn.addEventListener("click", () => {
+            menuBtn.classList.toggle("active");
+            navigation.classList.toggle("active");
+        });
+
+
+        //javascript for video slider naviagtion
+        const btns = document.querySelectorAll(".nav-btn");
+        const slides = document.querySelectorAll(".video-slide");
+        //const contents = document.querySelectorAll(".content");
+
+        var sliderNav = function(manual){
+
+            btns.forEach((btn) => {
+                btn.classList.remove("active");
+            });
+
+            slides.forEach((slide) => {
+                slide.classList.remove("active");
+            });
+
+            //contents.forEach((content) => {
+                //content.classList.remove("active");
+            //});
+
+            btns[manual].classList.add("active");
+            slides[manual].classList.add("active");
+            //contents[manual].classList.add("active");
+        }
+
+        btns.forEach((btn, i) => {
+            btn.addEventListener("click", () => {
+                sliderNav(i);
+            });
+        });
+    </script>
+</body>
+</html>
